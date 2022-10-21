@@ -1,0 +1,19 @@
+<% accountsStatsData.forEach((data, index)=> {
+	const {propertyName,currencySimbol,currentValue,isIncrease,valueInUSD} = data;
+	const isEven = index % 2 == 0;
+	%>
+<div class="accounts__stats-container <%= isEven && " even-background-color" %>">
+	<span class="accounts__stats-title">
+		<%= propertyName %>
+	</span>
+	<span class="accounts__stats-title">
+		<%= currencySimbol + currentValue%>
+	</span>
+	<span class="accounts__stats-trend <%= isIncrease? " green-color": " red-color" %>">
+		<i class=" fa-solid <%= isIncrease ? " fa-arrow-up": "fa-arrow-down" %>"></i>
+	</span>
+	<span class="accounts__stats-usd-value">
+		$<%= numberWithCommas(valueInUSD) %>
+	</span>
+</div>
+<% }) %>

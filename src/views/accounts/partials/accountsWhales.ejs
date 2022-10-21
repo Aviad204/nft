@@ -1,0 +1,43 @@
+<div class="accounts__whales-header-filters-container">
+	<div class="accounts__whales-header-filter-item-container">
+		<span class="accounts__whales-header-filter-item-text">All</span>
+	</div>
+	<div
+		class="accounts__whales-header-filter-item-container accounts__whales-filter-whales accounts__whales-filter-selected">
+		<span class="accounts__whales-header-filter-item-text">Whales</span>
+	</div>
+	<div class="accounts__whales-header-filter-item-container">
+		<span class="accounts__whales-header-filter-item-text">New</span>
+	</div>
+	<div class="accounts__whales-header-filter-item-container accounts__whales-filter-view-more">
+		<span class="accounts__whales-header-filter-item-text pb-2">...</span>
+	</div>
+</div>
+<div class="accounts__whales-bar-containers">
+	<div class="accounts__whales-bar-section-header-wrapper">
+		<span class="accounts__whales-bar-section-header-title">
+			<%= totalWhalesNumber %> Whales
+		</span>
+	</div>
+	<% dataForWhalesBar.forEach(data=>{ 
+		const {currencySimbol, propertyName, valueInCrypto ,percentageBar} = data
+		%>
+	<div class="accounts__whales-bar-section-single-block">
+		<div class="d-flex justify-content-between">
+			<span class="accounts__whales-bar-section-bar-title">
+				<%= propertyName %>
+			</span>
+			<span class="accounts__whales-bar-section-bar-title-value">
+				<%= currencySimbol + convertPriceToPrintedValue(valueInCrypto) %>
+			</span>
+		</div>
+		<div class="accounts__whales-bar-section-actual-bar-wrapper">
+			<div class="progress accounts__whales-bar-section-actual-bar-empty">
+				<div class="progress-bar accounts__whales-bar-section-actual-bar-filled" role="progressbar"
+					aria-valuenow="<%= percentageBar %>" style="width: <%= percentageBar%>%" aria-valuemin="0"
+					aria-valuemax="100"></div>
+			</div>
+		</div>
+	</div>
+	<% }) %>
+</div>

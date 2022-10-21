@@ -1,0 +1,91 @@
+<div class="accounts__24-hour-feed-title-container ">
+	<span class="accounts__24-hour-feed-title ">24-Hour Feed</span>
+</div>
+<div class="accounts__24feed-list-container-wrapper">
+	<div class="accounts__24feed-list-container">
+		<% dataFor24HoursFeed.forEach(data=>{ 
+	const {	
+		websiteLink, 
+		dateCreated, 
+		images,
+		typeOfListing, 
+		currencySimbol,
+		listingValueInCrypto,
+		listingValueInUSD,
+		nfti,
+		adjFloor,
+		isProfit,
+		profitLossValue,
+		isBelowNfti,
+		percentageDifferentNfti
+	}= data;
+	%>
+		<div class="accounts__single-24feed-container">
+			<div class="accounts__single-24feed-info-container d-flex flex-column justify-content-between">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="accounts__single-24feed-title">
+							<%= websiteLink %>
+						</span>
+						<span class="accounts__single-24feed-time-ago">
+							<%= getTimeAgoStringFromEpoch(dateCreated) %>
+						</span>
+					</div>
+					<div class="accounts__single-24feed-options-wrapper">
+						<div class="accounts__single-24feed-option-container">
+							<i class="fa-solid fa-plus accounts__single-24feed-option-add"></i>
+						</div>
+						<div class="accounts__single-24feed-option-container accounts__24_dropdown">
+							<i class="fa-solid fa-chevron-down accounts__single-24feed-option-dropdown"></i>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex flex-row">
+					<div class="accounts__single-24feed-images">
+						<% images.forEach(imgLink=>{%>
+						<img class="accounts__single-24feed-single-image" src=<%= imgLink %> alt={`Image gallery for
+							${websiteLink}`}>
+						<%}) %>
+					</div>
+				</div>
+			</div>
+			<div class="accounts__single-24feed-listing-container d-flex justify-content-between">
+				<div class="accounts__single-24feed-listing-header-wrapper">
+					<span class="accounts__single-24feed-listing-header-title">
+						<%= typeOfListing %> for <%= currencySimbol + listingValueInCrypto %>
+						($<%= numberWithCommas(listingValueInUSD)%>)
+					</span>
+					<span class="accounts__single-24feed-listing-header-compare-to-nfti">
+						<%=percentageDifferentNfti%>% <%= isBelowNfti? "below" : "above"%> NFTi
+					</span>
+				</div>
+				<div class="accounts__single-24feed-listing-bottom-info-wrapper">
+					<div class="d-flex flex-row justify-content-between w-50">
+						<div class="d-flex flex-column">
+							<span class="accounts__single-24feed-listing-bottom-title">NFTI</span>
+							<span class="accounts__single-24feed-listing-bottom-value">
+								<%= currencySimbol + nfti %>
+							</span>
+						</div>
+						<div class="d-flex flex-column pe-3">
+							<span class="accounts__single-24feed-listing-bottom-title">ADJ. FLOOR</span>
+							<span class="accounts__single-24feed-listing-bottom-value">
+								<%= currencySimbol + adjFloor %>
+							</span>
+						</div>
+					</div>
+					<div>
+						<div class="d-flex flex-column">
+							<span class="accounts__single-24feed-listing-bottom-title">EST. PROFIT</span>
+							<span
+								class="accounts__single-24feed-listing-bottom-value-profit <%= isProfit? " accounts__profit-green" : " accounts__profit-red" %>">
+								<%= currencySimbol + profitLossValue %>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% }) %>
+	</div>
+</div>

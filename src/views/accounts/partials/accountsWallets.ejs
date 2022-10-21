@@ -1,0 +1,16 @@
+<% accountsWallets.forEach((data, index)=> {
+	const {propertyName,value,isIncrease} = data;
+	const isColored = index % 2 != 0;
+	%>
+<div class="accounts__stats-container <%= isColored && " even-background-color" %>">
+	<span class="accounts__stats-title">
+		<%= propertyName %>
+	</span>
+	<span class="accounts__stats-title m-1">
+		<%= convertPriceToPrintedValue(value) %>
+	</span>
+	<span class="accounts__stats-trend ms-2 <%= isIncrease? " green-color": " red-color" %>">
+		<i class=" fa-solid <%= isIncrease ? " fa-arrow-up": "fa-arrow-down" %>"></i>
+	</span>
+</div>
+<% }) %>

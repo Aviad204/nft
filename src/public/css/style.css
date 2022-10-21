@@ -1,0 +1,501 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #09090A;
+}
+
+.page-wrapper {
+    max-width: 1440px;
+    max-height: 900px;
+    margin: 0 auto;
+}
+
+.page-title {
+    position: relative;
+    left: 25px;
+    top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #FFFFFF;
+}
+
+.green-color {
+    color: #2BC23F;
+}
+
+.red-color {
+    color: #BE3D2C
+}
+
+/* 
+    Using rotate due to the fact "fa-arrow-up-right" is premium only :)
+*/
+.fa-arrow-down {
+    transform: rotate(-45deg);
+}
+
+.fa-arrow-up {
+    transform: rotate(45deg);
+}
+
+/* 
+    Accounts 
+*/
+.accounts__nav-single-item {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #F2F2F5;
+    text-decoration: none;
+}
+
+.accounts__nav-single-container {
+    width: 123px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accounts__nav {
+    margin-top: 40px;
+    margin-right: 70px;
+}
+
+.accounts__nav ul {
+    display: flex;
+}
+
+.accounts__selected-item {
+    border-bottom: 5px solid #9452F7;
+    padding-bottom: 35px;
+}
+
+/* (I assume this menu is for accounts only, could be also as a "main" css not specific to accounts) */
+.accounts__option-menu-corner {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    top: 19px;
+    right: 67px;
+    border-radius: 50%;
+    display: flex;
+    background: #17161C;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.accounts__ellipsis-menu {
+    width: 14px;
+    margin: auto;
+    color: #79798C;
+}
+
+.accounts__header-wrapper {
+    width: 100%;
+    height: 99px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.accounts__stats-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 58px;
+}
+
+.accounts__stats-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #F2F2F5;
+    margin-right: 20px;
+}
+
+.accounts__stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    width: 288px;
+    background: #17161C;
+}
+
+.accounts__stats-usd-value {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #79798C;
+    margin-left: 10px;
+}
+
+.accounts__page-content-wrapper {
+    margin-top: 30px;
+    margin-bottom: 71px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.accounts__24-hour-feed-wrapper {
+    width: 850px;
+    height: 640px;
+    background: #17161C;
+    border-radius: 2px;
+    padding: 0px 21px;
+}
+
+.accounts__24-hour-feed-title {
+    margin-top: 26px;
+    margin-bottom: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #F2F2F5;
+}
+
+.accounts__single-24feed-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #F2F2F5;
+}
+
+.accounts__single-24feed-container {
+    display: flex;
+    flex-direction: row;
+    width: 808px;
+    height: 120px;
+    background: #1D1D26;
+    margin-bottom: 8px;
+}
+
+.accounts__single-24feed-info-container {
+    padding: 15px 20px;
+    background: #1D1D26;
+    height: 120px;
+    width: 309px;
+    border-radius: 2px 0px 0px 2px;
+    border-right: 1px solid #17161C;
+}
+
+.accounts__24feed-list-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 17px;
+    box-sizing: content-box;
+}
+
+.accounts__24feed-list-container-wrapper {
+    width: 100%;
+    height: 565px;
+    overflow: hidden;
+}
+
+.accounts__single-24feed-time-ago {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #79798C;
+    margin-top: 7px;
+}
+
+.accounts__single-24feed-images {
+    display: flex;
+    flex-direction: row;
+    margin-top: 13px;
+}
+
+.accounts__single-24feed-single-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    margin-right: 4px;
+}
+
+.accounts__24-hour-feed-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.accounts__single-24feed-options-wrapper {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.accounts__single-24feed-option-add {
+    color: #9452F7;
+    width: 13px;
+    height: 13px;
+    margin: auto;
+}
+
+.accounts__single-24feed-option-container {
+    height: 40px;
+    width: 36px;
+    border-radius: 2px;
+    background: #282836;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.accounts__24_dropdown {
+    background: #353547;
+    border-radius: 0px 2px 2px 0px;
+}
+
+.accounts__single-24feed-option-dropdown {
+    height: 5.95px;
+    width: 10px;
+    border-radius: 0px;
+    color: #F2F2F5;
+    margin: auto;
+    padding-bottom: 15px;
+    padding-right: 14px;
+}
+
+.accounts__single-24feed-listing-container {
+    padding: 10px 20px;
+    background: #1D1D26;
+    border-radius: 0px 2px 2px 0px;
+    height: 120px;
+    width: 499px;
+    display: flex;
+    flex-direction: column;
+}
+
+.accounts__single-24feed-listing-header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px solid #17161C;
+}
+
+.accounts__single-24feed-listing-header-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #F2F2F5;
+}
+
+.accounts__single-24feed-listing-header-compare-to-nfti {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    color: #79798C;
+}
+
+.accounts__single-24feed-listing-bottom-info-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 65px;
+    padding-top: 14px;
+}
+
+.accounts__single-24feed-listing-bottom-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #79798C;
+}
+
+.accounts__single-24feed-listing-bottom-value {
+    padding-top: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #79798C;
+}
+
+.accounts__single-24feed-listing-bottom-value-profit {
+    padding-top: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: right;
+}
+
+.accounts__profit-green {
+    color: #3CD660;
+}
+
+.accounts__profit-red {
+    color: #BE3D2C;
+}
+
+.accounts__whales-wrapper {
+    width: 410px;
+    height: 640px;
+    background: #17161C;
+    border-radius: 0px 0px 2px 2px;
+}
+
+.accounts__whales-header-filters-container {
+    height: 55px;
+    background: #1D1D26;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 12px 20px;
+}
+
+.accounts__whales-header-filter-item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 31px;
+    width: 55px;
+    left: 20px;
+    top: 12px;
+    border-radius: 31px;
+    padding: 8px 20px 8px 20px;
+    background: #17161C;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.accounts__whales-filter-whales {
+    width: 77px;
+    left: 83px;
+    top: 12px;
+}
+
+.accounts__whales-filter-view-more {
+    width: 31px;
+    height: 31px;
+    width: 31px;
+    left: 243px;
+    top: 12px;
+    padding: 12px 10px 12px 10px;
+}
+
+.accounts__whales-filter-selected {
+    background: #F2F2F5;
+    border-radius: 31px;
+}
+
+.accounts__whales-header-filter-item-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #79798C;
+}
+
+.accounts__whales-bar-containers {
+    padding: 0px 20px;
+    background: #17161C;
+    border-radius: 0px 0px 2px 2px;
+}
+
+.accounts__whales-bar-section-header-wrapper {
+    padding-top: 29px;
+    padding-bottom: 40px;
+    display: flex;
+}
+
+.accounts__whales-bar-section-header-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #F2F2F5;
+}
+
+.accounts__whales-bar-section-bar-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #79798C;
+}
+
+.accounts__whales-bar-section-bar-title-value {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: right;
+    color: #F2F2F5;
+}
+
+.accounts__whales-bar-section-actual-bar-empty {
+    height: 4px;
+    background: #282836;
+    border-radius: 2px 0px 0px 2px;
+}
+
+.accounts__whales-bar-section-actual-bar-filled {
+    height: 4px;
+    background: #1FA8D1;
+    border-radius: 2px 0px 0px 2px;
+}
+
+.accounts__whales-bar-section-actual-bar-wrapper {
+    margin-top: 16px;
+}
+
+.accounts__whales-bar-section-single-block {
+    padding-bottom: 33px;
+}
+
+
+
+
+
+/* 
+    Overriders Section (To avoid using !important)
+*/
+
+.even-background-color {
+    background: #1A1A22;
+}
